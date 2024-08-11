@@ -1,0 +1,10 @@
+version: "1"
+services:
+  dev:
+    image: node:17
+    platform: linux/amd64
+    volumes:
+      - .:/root/job-application-tracker-ui
+    working_dir: /root
+    cpus: 2
+    network_mode: host
