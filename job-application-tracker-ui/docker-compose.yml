@@ -1,10 +1,12 @@
-version: "1"
 services:
-  dev:
-    image: node:17
-    platform: linux/amd64
+  app-ui:
+    build: .
+    image: app-ui
+    container_name: app-ui
+    ports:
+      - "3000:3000"
     volumes:
-      - .:/root/job-application-tracker-ui
-    working_dir: /root
-    cpus: 2
-    network_mode: host
+      - .:/app
+    # stdin_open: true # Equivalent to -it, keeps STDIN open
+    tty: true # Equivalent to -it, allocates a pseudo-TTY
+    command: bash # Starts a bash shell when the container runs
