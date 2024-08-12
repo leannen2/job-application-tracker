@@ -1,0 +1,12 @@
+CREATE DATABASE IF NOT EXISTS jobs_db;
+
+USE jobs_db;
+
+CREATE TABLE IF NOT EXISTS jobs (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    company VARCHAR(255) NOT NULL,
+    role VARCHAR(255) NOT NULL,
+    submitted_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+
+INSERT INTO jobs (company, role) VALUES ('Microsoft', 'SWE');
