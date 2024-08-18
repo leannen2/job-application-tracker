@@ -1,6 +1,6 @@
 # job-application-tracker
 
-# How to run frontend dev container 
+## How to run frontend dev container 
 1. Cd to frontend root dir (where Dockerfile is)
 2. ```docker build -t app-ui . ``` to build docker image
 3. `docker run --name app-ui -p 3000:3000 -v .:/app -it b27c9fdb8b24 bash` to run container 
