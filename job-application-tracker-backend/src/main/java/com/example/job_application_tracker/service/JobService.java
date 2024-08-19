@@ -1,19 +1,23 @@
 package com.example.job_application_tracker.service;
 
+import com.example.job_application_tracker.repository.Jobs;
+import com.example.job_application_tracker.repository.JobsRepository;
+import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
-
-import java.util.ArrayList;
-import java.util.List;
+import reactor.core.publisher.Flux;
 
 @Service
+@RequiredArgsConstructor
 public class JobService {
-    private List<String> jobs = new ArrayList<>();
+    private final JobsRepository jobsRepository;
 
-    public List<String> jobs() {
-        return jobs;
+    public Flux<Jobs> jobs() {
+        return jobsRepository.findAll().map(item -> {
+            System.out.println(item);
+            return item;
+        });
     }
 
     public void addJob(String job) {
-        jobs.add(job);
     }
 }
