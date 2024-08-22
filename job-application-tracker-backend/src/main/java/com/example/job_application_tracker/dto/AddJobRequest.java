@@ -1,14 +1,20 @@
 package com.example.job_application_tracker.dto;
 
-import lombok.Getter;
-import lombok.RequiredArgsConstructor;
-import lombok.Setter;
+import lombok.*;
 
+import java.time.LocalDateTime;
+
+@Builder
 @RequiredArgsConstructor
+@AllArgsConstructor
 @Getter
 @Setter
 public class AddJobRequest {
-    private String jobName;
+    private int id;
     private String company;
-    private String date;
+    private String role;
+    private LocalDateTime submittedAt;
+    private LocalDateTime oaDeadline;
+    private String link;
+    private String stage;
 }
