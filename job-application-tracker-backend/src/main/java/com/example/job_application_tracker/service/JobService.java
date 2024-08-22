@@ -1,6 +1,6 @@
 package com.example.job_application_tracker.service;
 
-import com.example.job_application_tracker.repository.Jobs;
+import com.example.job_application_tracker.repository.Job;
 import com.example.job_application_tracker.repository.JobsRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
@@ -13,10 +13,11 @@ import java.util.List;
 public class JobService {
     private final JobsRepository jobsRepository;
 
-    public Mono<List<Jobs>> jobs() {
+    public Mono<List<Job>> jobs() {
         return jobsRepository.findAll().collectList();
     }
 
-    public void addJob(String job) {
+    public Mono<Void> addJob(Job job) {
+        return jobsRepository.save(job).flatMap( r -> Mono.empty());
     }
 }
