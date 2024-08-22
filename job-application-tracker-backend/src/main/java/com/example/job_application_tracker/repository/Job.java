@@ -9,14 +9,13 @@ import org.springframework.data.relational.core.mapping.Column;
 import org.springframework.data.relational.core.mapping.Table;
 
 import java.time.LocalDateTime;
-import java.util.Date;
 
 @Data
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
 @Table("jobs")
-public class Jobs {
+public class Job {
     @Id
     @Column("id")
     private int id;

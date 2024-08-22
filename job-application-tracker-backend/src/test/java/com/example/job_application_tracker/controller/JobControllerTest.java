@@ -1,6 +1,6 @@
 package com.example.job_application_tracker.controller;
 
-import com.example.job_application_tracker.repository.Jobs;
+import com.example.job_application_tracker.repository.Job;
 import com.example.job_application_tracker.service.JobService;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -29,8 +29,8 @@ public class JobControllerTest {
 
     @Test
     void jobs() {
-        List<Jobs> jobs = List.of(
-                Jobs.builder().build()
+        List<Job> jobs = List.of(
+                Job.builder().build()
         );
         Mockito.when(jobService.jobs()).thenReturn(
                 Mono.just(jobs)
