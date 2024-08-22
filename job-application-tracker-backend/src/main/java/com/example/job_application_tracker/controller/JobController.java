@@ -20,7 +20,7 @@ public class JobController {
     private final JobService jobService;
 
     @GetMapping("/jobs")
-    public Flux<Jobs> jobs() {
+    public Mono<List<Jobs>> jobs() {
         return jobService.jobs();
     }
 
