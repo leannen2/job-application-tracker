@@ -20,3 +20,6 @@ Note: Make sure sql server is running
 ## Docker review
 1. `docker exec -it <container_id_or_name> bash` : To open bash of running container
 2. `docker start <container_id_or_name>` : Start container 
+
+## References
+1. Swagger UI: (https://medium.com/@selieshjksofficial/embracing-swagger-in-node-js-a-practical-implementation-guide-05f865c90b8d)
