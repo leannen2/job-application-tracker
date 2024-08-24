@@ -22,4 +22,4 @@ Note: Make sure sql server is running
 2. `docker start <container_id_or_name>` : Start container 
 
 ## References
-1. Swagger UI: (https://medium.com/@selieshjksofficial/embracing-swagger-in-node-js-a-practical-implementation-guide-05f865c90b8d)
+1. Swagger UI: [Embracing Swagger in Node.js: A Practical Implementation Guide](https://medium.com/@selieshjksofficial/embracing-swagger-in-node-js-a-practical-implementation-guide-05f865c90b8d)
