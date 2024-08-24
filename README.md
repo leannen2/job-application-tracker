@@ -13,6 +13,9 @@
 5. It'll prompt for a password. Enter `dev_password`
 6. You'll enter into the MySQL shell and can run MySQL queries like `SELECT * FROM jobs;` Enter `quit` to exit the MySQL shell.
 
+## How to run backend tests
+Note: Make sure sql server is running 
+1. From root directory for backend, run `./gradlew clean build`
 
 ## Docker review
 1. `docker exec -it <container_id_or_name> bash` : To open bash of running container
