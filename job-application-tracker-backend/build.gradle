@@ -24,9 +24,15 @@ repositories {
 }
 
 dependencies {
+	implementation "org.springframework.boot:spring-boot-devtools"
+	implementation "org.springframework.boot:spring-boot-starter-actuator"
 	implementation 'org.springframework.boot:spring-boot-starter-webflux'
 	implementation 'org.springframework.boot:spring-boot-starter-data-r2dbc'
 	implementation 'dev.miku:r2dbc-mysql:0.8.2.RELEASE'
+	implementation 'org.springdoc:springdoc-openapi-ui:1.8.0'
+	implementation 'io.swagger.core.v3:swagger-annotations:2.2.16'
+	implementation 'io.swagger.core.v3:swagger-models:2.2.16'
+	implementation 'io.swagger.core.v3:swagger-core:2.2.16'
 	compileOnly 'org.projectlombok:lombok'
 	annotationProcessor 'org.projectlombok:lombok'
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
