@@ -1,4 +1,7 @@
-# job-application-tracker
+# job-application-tracker (Work in progress)
+
+## Project Description
+Users can manage their job applications by tracking the statuses of each of their applications, storing application links, and noting deadlines. This application is built with a Java Spring Boot backend, MySQL database, and React Typescript frontend.
 
 ## How to run frontend dev container 
 1. Cd to frontend root dir (where Dockerfile is)
