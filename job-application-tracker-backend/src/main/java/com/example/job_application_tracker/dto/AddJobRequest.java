@@ -2,7 +2,7 @@ package com.example.job_application_tracker.dto;
 
 import lombok.*;
 
-import java.time.LocalDateTime;
+import java.time.LocalDate;
 
 @Builder
 @RequiredArgsConstructor
@@ -13,8 +13,8 @@ public class AddJobRequest {
     private int id;
     private String company;
     private String role;
-    private LocalDateTime submittedAt;
-    private LocalDateTime oaDeadline;
+    private LocalDate submittedAt;
+    private LocalDate oaDeadline;
     private String link;
     private String stage;
 }

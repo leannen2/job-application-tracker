@@ -1,5 +1,6 @@
 package com.example.job_application_tracker.repository;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -8,7 +9,7 @@ import org.springframework.data.annotation.Id;
 import org.springframework.data.relational.core.mapping.Column;
 import org.springframework.data.relational.core.mapping.Table;
 
-import java.time.LocalDateTime;
+import java.time.LocalDate;
 
 @Data
 @Builder
@@ -27,10 +28,10 @@ public class Job {
     private String role;
 
     @Column("submitted_at")
-    private LocalDateTime submittedAt;
+    private LocalDate submittedAt;
 
     @Column("oa_deadline")
-    private LocalDateTime oaDeadline;
+    private LocalDate oaDeadline;
 
     @Column("link")
     private String link;
