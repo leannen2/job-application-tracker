@@ -2,12 +2,10 @@ package com.example.job_application_tracker.repository;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.json.JsonMapper;
+import com.fasterxml.jackson.datatype.jsr310.JavaTimeModule;
 import org.junit.jupiter.api.Test;
 
-import java.sql.Date;
-import java.sql.Timestamp;
 import java.time.LocalDate;
-import java.time.LocalDateTime;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
@@ -16,9 +14,9 @@ public class JobTest {
     void json() throws JsonProcessingException {
         final var body = """
                 {
-                    "company": "CoreLogic",
+                    "company": "Company1",
                     "role": "SWE",
-                    "submittedAt": "2011-05-18",
+                    "submittedAt": "2011-09-27",
                     "oaDeadline": "2011-05-18",
                     "link": "link",
                     "stage": "APP_SUBMITTED"
@@ -26,14 +24,15 @@ public class JobTest {
                 """;
 
         final var mapper = JsonMapper.builder().build();
+        mapper.registerModule(new JavaTimeModule());
 
         final var pojo = mapper.readValue(
                 body,
                 Job.class
         );
-        assertThat(pojo.getCompany()).isEqualTo("CoreLogic");
+        assertThat(pojo.getCompany()).isEqualTo("Company1");
         assertThat(pojo.getRole()).isEqualTo("SWE");
-//        assertThat(pojo.getOaDeadline()).isEqualTo(Date.valueOf("2024-08-22"));
-        assertThat(pojo.getSubmittedAt()).isEqualTo(LocalDate.of(2011, 5, 18));
+        assertThat(pojo.getOaDeadline()).isEqualTo(LocalDate.of(2011, 5, 18));
+        assertThat(pojo.getSubmittedAt()).isEqualTo(LocalDate.of(2011, 9, 27));
     }
 }
