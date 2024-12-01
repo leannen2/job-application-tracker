@@ -15,7 +15,7 @@ function Job(job: JobType) {
             target="_blank"
             rel="noopener noreferrer"
           >
-            Link
+            {job.link}
           </a>
         )}
       </td>
