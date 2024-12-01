@@ -1,38 +1,63 @@
-.App {
+table {
+  width: 100%;
+  border-collapse: collapse;
+  /* Ensures clean borders between cells */
+  margin: 0px 0;
+  font-size: 1rem;
+  text-align: left;
+  border: 1px solid #ddd;
+  /* Adds a border around the table */
+  border-radius: 10px;
+  /* Rounds the corners of the table */
+  overflow: hidden;
+  /* Ensures content respects rounded corners */
+}
+
+thead tr {
+  background-color: #f4f4f4;
+  border-bottom: 2px solid #ddd;
+  /* Adds a distinct border below the header row */
+}
+
+thead th,
+tbody td {
+  border: 1px solid #ddd;
+  /* Ensures each cell has a consistent border */
+}
+
+tbody tr:nth-child(even) {
+  background-color: #f9f9f9;
+  /* Adds striped rows for readability */
+}
+
+tbody tr:hover {
+  background-color: #f1f1f1;
+  /* Highlights row on hover */
+}
+
+td,
+th {
+  padding: 10px;
+  vertical-align: middle;
+}
+
+a {
+  color: #007bff;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+#error-text {
+  color: red;
+  /* font-weight: bold; */
+}
+
+#tracker-list-header {
+  padding: 0px;
+  margin: 0px;
+  font-weight: bold;
   text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
 }
