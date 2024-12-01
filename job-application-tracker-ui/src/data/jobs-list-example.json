@@ -1,0 +1,38 @@
+[
+  {
+    "id": 1,
+    "company": "Microsoft",
+    "role": "SWE",
+    "submittedAt": null,
+    "oaDeadline": null,
+    "link": null,
+    "stage": "APP_SUBMITTED"
+  },
+  {
+    "id": 2,
+    "company": "Microsoft",
+    "role": "SWE",
+    "submittedAt": null,
+    "oaDeadline": null,
+    "link": "link.com",
+    "stage": "APP_SUBMITTED"
+  },
+  {
+    "id": 3,
+    "company": "Microsoft",
+    "role": "SWE",
+    "submittedAt": "2024-11-29",
+    "oaDeadline": "2024-12-25",
+    "link": "link.com",
+    "stage": "OA_RECEIVED"
+  },
+  {
+    "id": 4,
+    "company": "Microsoft",
+    "role": "SWE",
+    "submittedAt": "2021-11-29",
+    "oaDeadline": "2021-12-25",
+    "link": "link.com",
+    "stage": "OA_RECEIVED"
+  }
+]
