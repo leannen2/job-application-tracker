@@ -8,6 +8,11 @@ import { JobType } from "./types";
 function App() {
   const [jobs, setJobs] = useState<Array<JobType>>([]);
   const [error, setError] = useState("");
+  const [sortConfig, setSortConfig] = useState<{
+    key: keyof JobType;
+    direction: string;
+  }>({ key: "id", direction: "ascending" });
+
   useEffect(() => {
     fetchJobs()
       .then((data) => {
@@ -16,8 +21,54 @@ function App() {
       })
       .catch((error) => {
         setError(error);
+        setJobs([...jobList]);
       });
   }, []);
+
+  useEffect(() => {
+    const sortedJobs = [...jobs];
+    console.log(sortConfig);
+    if (sortConfig) {
+      sortedJobs.sort((a, b) => {
+        const key = sortConfig.key;
+        const direction = sortConfig.direction;
+
+        const valueA = a[key];
+        const valueB = b[key];
+
+        if (
+          valueA !== undefined &&
+          valueB !== undefined &&
+          valueA !== null &&
+          valueB !== null
+        ) {
+          if (valueA < valueB) {
+            return direction === "ascending" ? -1 : 1;
+          }
+          if (valueA > valueB) {
+            return direction === "ascending" ? 1 : -1;
+          }
+        }
+
+        return 0;
+      });
+    }
+    setJobs([...sortedJobs]);
+    console.log("jobs", jobs);
+  }, [sortConfig]);
+
+  const handleSort = (key: keyof JobType) => {
+    console.log("handle sort");
+    let direction = "ascending";
+    if (
+      sortConfig &&
+      sortConfig.key === key &&
+      sortConfig.direction === "ascending"
+    ) {
+      direction = "descending";
+    }
+    setSortConfig({ key, direction });
+  };
 
   return (
     <div className="App">
@@ -25,18 +76,19 @@ function App() {
       <table border={1}>
         <thead>
           <tr>
-            <th>ID</th>
-            <th>Company</th>
-            <th>Role</th>
-            <th>Submitted At</th>
-            <th>OA Deadline</th>
-            <th>Link</th>
-            <th>Stage</th>
+            <th onClick={() => handleSort("id")}>ID</th>
+            <th onClick={() => handleSort("company")}>Company</th>
+            <th onClick={() => handleSort("role")}>Role</th>
+            <th onClick={() => handleSort("submittedAt")}>Submitted At</th>
+            <th onClick={() => handleSort("oaDeadline")}>OA Deadline</th>
+            <th onClick={() => handleSort("link")}>Link</th>
+            <th onClick={() => handleSort("stage")}>Stage</th>
           </tr>
         </thead>
         <tbody>
-          {error === "" && jobs.map((job) => <Job {...job} key={job.id} />)}
-          {error !== "" && jobList.map((job) => <Job {...job} key={job.id} />)}
+          {jobs.map((job) => (
+            <Job {...job} key={job.id} />
+          ))}
         </tbody>
       </table>
       {error !== "" && (
