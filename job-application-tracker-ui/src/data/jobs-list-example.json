@@ -10,29 +10,29 @@
   },
   {
     "id": 2,
-    "company": "Microsoft",
+    "company": "Google",
     "role": "SWE",
     "submittedAt": null,
     "oaDeadline": null,
-    "link": "link.com",
+    "link": "link.com/google",
     "stage": "APP_SUBMITTED"
   },
   {
     "id": 3,
-    "company": "Microsoft",
+    "company": "Netflix",
     "role": "SWE",
     "submittedAt": "2024-11-29",
     "oaDeadline": "2024-12-25",
-    "link": "link.com",
+    "link": "link.com/netflix",
     "stage": "OA_RECEIVED"
   },
   {
     "id": 4,
-    "company": "Microsoft",
+    "company": "Meta",
     "role": "SWE",
     "submittedAt": "2021-11-29",
     "oaDeadline": "2021-12-25",
-    "link": "link.com",
+    "link": "link.com/meta",
     "stage": "OA_RECEIVED"
   }
 ]
