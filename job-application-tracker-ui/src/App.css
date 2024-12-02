@@ -5,12 +5,6 @@ table {
   margin: 0px 0;
   font-size: 1rem;
   text-align: left;
-  border: 1px solid #ddd;
-  /* Adds a border around the table */
-  border-radius: 10px;
-  /* Rounds the corners of the table */
-  overflow: hidden;
-  /* Ensures content respects rounded corners */
 }
 
 thead tr {
@@ -52,7 +46,6 @@ a:hover {
 
 #error-text {
   color: red;
-  /* font-weight: bold; */
 }
 
 #tracker-list-header {
@@ -60,4 +53,17 @@ a:hover {
   margin: 0px;
   font-weight: bold;
   text-align: center;
+}
+
+.sort-icon {
+  width: 1em;
+  height: 1rem;
+  vertical-align: middle;
+  margin-left: 0.5em;
+}
+
+#table-container {
+  border-radius: 10px;
+  overflow: hidden;
+  border: 1px solid #ddd;
 }
