@@ -9,7 +9,7 @@ import { ReactComponent as ArrowDown } from "./assets/arrow-down.svg";
 
 function App() {
   const [jobs, setJobs] = useState<Array<JobType>>([]);
-  const [error, setError] = useState("");
+  const [error, setError] = useState<string>("");
   const [sortConfig, setSortConfig] = useState<{
     key: keyof JobType;
     direction: string;
