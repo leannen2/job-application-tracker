@@ -1,8 +1,0 @@
-spring:
-  application:
-    name: Job Application Tracker
-
-  r2dbc:
-    url: r2dbc:mysql://localhost:3336/jobs_db
-    username: dev_user
-    password: dev_password
