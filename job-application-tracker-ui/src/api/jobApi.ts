@@ -1,10 +1,7 @@
-import axios from "axios";
-
 export const fetchJobs = () => {
-  return axios
-    .get("http://localhost:8080/jobs")
+  return fetch("http://localhost:8080/jobs")
     .then((response) => {
-      return response.data;
+      return response.json();
     })
     .catch((error) => {
       console.log("error occurred: ", error);

@@ -17,11 +17,11 @@ function App() {
 
   useEffect(() => {
     fetchJobs()
-      .then((data) => {
+      .then((data: any) => {
         setJobs(data);
         setError("");
       })
-      .catch((error) => {
+      .catch((error: any) => {
         setError(error);
         setJobs([...jobList]);
       });
