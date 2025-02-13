@@ -17,7 +17,7 @@ public class JobService {
         return jobsRepository.findAll().collectList();
     }
 
-    public Mono<Void> addJob(Job job) {
-        return jobsRepository.save(job).flatMap( r -> Mono.empty());
+    public Mono<Job> addJob(Job job) {
+        return jobsRepository.save(job).flatMap( r -> Mono.just(r));
     }
 }

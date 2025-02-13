@@ -1,4 +1,4 @@
-export const fetchJobs = () => {
+export const getJobs = () => {
   return fetch("http://localhost:8080/jobs")
     .then((response) => {
       return response.json();
