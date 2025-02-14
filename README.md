@@ -18,9 +18,11 @@ Before you begin, ensure you have met the following requirements:
 ## Set Up MySQL Container
 
 1. Navigate to dockerfile:  
-   `cd job-application-tracker-backend/docker/database`
-2. Build and start the docker image:  
-   `docker compose up -d`
+   ```bash
+   cd job-application-tracker-backend/docker/database
+3. Build and start the docker image:
+   ```bash
+   docker compose up -d
 
 ## Set Up Backend
 
@@ -31,10 +33,14 @@ Before you begin, ensure you have met the following requirements:
 ## Set Up Frontend
 
 1. Navigate to root of frontend folder at `/job-application-tracker-ui`
-2. Install NPM packages  
-   `npm install`
-3. Run the Next.js application  
-   `npm run dev`
+2. Install NPM packages
+  ```bash
+   npm install
+  ```
+   
+4. Run the Next.js application
+   ```bash
+   npm run dev
 
 ## Accessing the Application
 
