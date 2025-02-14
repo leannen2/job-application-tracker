@@ -13,10 +13,14 @@ import {
 import { AddJobModal } from "@/components/ui/AddJobModal";
 
 import { getJobs } from "@/app/api/jobs";
+import { deleteJob } from "@/app/api/delete-job";
 
 import { Job } from "@/lib/definitions";
 
 import Jobs from "@/app/api/jobs-list-example.json";
+
+import Image from "next/image";
+import trashCan from "../../public/gray-trash-can.svg";
 
 export default function Home() {
   const [jobs, setJobs] = useState<Array<any>>([]);
@@ -31,6 +35,15 @@ export default function Home() {
         setJobs(Jobs);
       });
   }, [loading]);
+
+  const handleDeleteClick = (event: any) => {
+    setLoading(true);
+    deleteJob(event.target.id)
+      .then((response) => {
+        setLoading(false);
+      })
+      .catch((error) => console.log(error));
+  };
 
   return (
     <main>
@@ -58,6 +71,15 @@ export default function Home() {
                 <a href={job.link} target="_blank">
                   {job.link}
                 </a>
+              </TableCell>
+              <TableCell>
+                <Image
+                  id={job.id.toString()}
+                  src={trashCan}
+                  alt="delete"
+                  className="h-4 w-4 "
+                  onClick={(e) => handleDeleteClick(e)}
+                />
               </TableCell>
             </TableRow>
           ))}
