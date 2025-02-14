@@ -37,8 +37,7 @@ Before you begin, ensure you have met the following requirements:
   ```bash
    npm install
   ```
-   
-4. Run the Next.js application
+3. Run the Next.js application
    ```bash
    npm run dev
 
