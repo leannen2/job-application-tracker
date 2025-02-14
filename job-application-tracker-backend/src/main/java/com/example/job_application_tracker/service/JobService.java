@@ -20,4 +20,9 @@ public class JobService {
     public Mono<Job> addJob(Job job) {
         return jobsRepository.save(job).flatMap( r -> Mono.just(r));
     }
+
+    public Mono<Void> deleteJob(int id) {
+        return jobsRepository.deleteById(id);
+    }
+
 }

@@ -43,4 +43,30 @@ public class JobControllerTest {
                 })
                 .verifyComplete();
     }
+
+    @Test
+    void addJob() {
+        Job job = Job.builder().build();
+        Mockito.when(jobService.addJob(job)).thenReturn(
+                Mono.just(job)
+        );
+
+        StepVerifier
+                .create(subject.addJob(job))
+                .assertNext(response -> {
+                    assertThat(response).isEqualTo(job);
+                })
+                .verifyComplete();
+    }
+
+    @Test
+    void delete() {
+        Mockito.when(jobService.deleteJob(0)).thenReturn(
+                Mono.empty()
+        );
+
+        StepVerifier
+                .create(subject.deleteJob("0"))
+                .verifyComplete();
+    }
 }

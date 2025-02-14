@@ -24,4 +24,9 @@ public class JobController {
     public Mono<Job> addJob(@RequestBody Job job) {
         return jobService.addJob(job);
     }
+
+    @DeleteMapping("/jobs/{jobId}")
+    public Mono<Void> deleteJob(@PathVariable String jobId) {
+        return jobService.deleteJob(Integer.parseInt(jobId));
+    }
 }
