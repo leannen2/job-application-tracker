@@ -2,7 +2,7 @@
 
 ## Project Description
 
-Users can manage their job applications by tracking the statuses of each of their applications, storing application links, and noting deadlines. This application is built with a Java Spring Boot backend, MySQL database, and NextJS Typescript frontend.
+Users can manage their job applications by tracking the statuses of each of their applications, storing application links, and noting deadlines. This application is built with a Java Spring Boot backend, MySQL database, and Next.js with TypeScript frontend.
 
 # Installation
 
